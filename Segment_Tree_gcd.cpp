@@ -23,8 +23,8 @@ struct SegmentTree
 			gd+=val;
 			return;
 		}
-		next[0]->Update(l,val);
-		next[1]->Update(l,val);
+		next[0]->Add(l,val);
+		next[1]->Add(l,val);
 		gd=__gcd(next[0]->gd,next[1]->gd);
 	}
 	void Set(int l,ll val)
@@ -36,8 +36,8 @@ struct SegmentTree
 			gd=val;
 			return;
 		}
-		next[0]->Update(l,val);
-		next[1]->Update(l,val);
+		next[0]->Set(l,val);
+		next[1]->Set(l,val);
 		gd=__gcd(next[0]->gd,next[1]->gd);
 	}
 	void Build(vll&a)
